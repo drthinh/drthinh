@@ -1,3 +1,420 @@
-<iframe src="https://try.haxe.org/embed/2b132" width="100%" height="300" frameborder="no" allowfullscreen>
-	<a href="https://try.haxe.org/#2b132">Try Haxe !</a>
-</iframe>
+<html>
+<header>
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.5.0/semantic.min.css" />
+  <link rel="stylesheet" type="text/css"
+    href="https://cdn.datatables.net/v/dt/jszip-2.5.0/dt-1.13.1/b-2.3.3/b-colvis-2.3.3/b-html5-2.3.3/b-print-2.3.3/date-1.2.0/r-2.4.0/rr-1.3.1/sl-1.5.0/datatables.min.css" />
+
+  <style>
+    body {
+      font: 90%/1.45em "Times New Roman", sans-serif;
+      margin: 0;
+      padding: 8px 10px;
+      color: #333;
+      background-color: #fff;
+    }
+
+    table.dataTable tbody th,
+    table.dataTable tbody td {
+      padding: 2px 10px;
+    }
+  </style>
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.15.2/css/selectize.default.min.css" />
+
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
+  <script type="text/javascript" src="https://momentjs.com/downloads/moment-with-locales.js"></script>
+  <script type="text/javascript"
+    src="https://cdn.datatables.net/v/dt/jszip-2.5.0/dt-1.13.1/b-2.3.3/b-colvis-2.3.3/b-html5-2.3.3/b-print-2.3.3/date-1.2.0/r-2.4.0/rr-1.3.1/sl-1.5.0/datatables.min.js"></script>
+  <script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.5.0/semantic.min.js"></script>
+  <script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.15.2/js/selectize.min.js"></script>
+</header>
+
+<body>
+  <div class="ui pointing menu">
+    <a class="item active">
+      Trang chủ
+    </a>
+    <a class="item">
+      Vật tư
+    </a>
+    <a class="item">
+      Nhân viên
+    </a>
+    <div class="right menu">
+      <div class="item">
+        <div class="ui transparent icon input">
+          <input type="text" id="myInput" placeholder="Search...">
+          <i class="search link icon"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ui grid">
+    <div class="four wide column">
+      <div class="ui top attached button">DANH SÁCH BỆNH NHÂN</div>
+      <div class="ui">
+        <div class="ui tabs menu" style="overflow-x:auto;">
+          <a class="item" data-tab="first">Chờ khám</a>
+          <a class="item" data-tab="second">Đã khám</a>
+          <a class="item active" data-tab="third">Đã thanh toán</a>
+          <button class="ui basic button item">
+            <i class="icon user"></i>
+            Add Friend
+          </button>
+        </div>
+        <div class="ui bottom tab segment" data-tab="first">
+          <div class="ui labeled button" tabindex="0">
+            <div class="ui red button">
+              <i class="heart icon"></i> Like
+            </div>
+            <a class="ui basic red left pointing label">
+              1,048
+            </a>
+          </div>
+        </div>
+        <div class="ui bottom tab segment" data-tab="second">
+
+          <table id="example2" class="display responsive nowrap" style="width:100%">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Position</th>
+                <th>Office</th>
+                <th>Age</th>
+                <th>Start date</th>
+                <th>Salary</th>
+                <th>Functions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>Shad Decker</td>
+                <td>Regional Director</td>
+                <td>Edinburgh</td>
+                <td>51</td>
+                <td>2008-11-13</td>
+                <td>$183,000</td>
+                <td>
+
+                </td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>Michael Bruce</td>
+                <td>Javascript Developer</td>
+                <td>Singapore</td>
+                <td>29</td>
+                <td>2011-06-27</td>
+                <td>$183,000</td>
+                <td>
+
+                </td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>Donna Snider</td>
+                <td>Customer Support</td>
+                <td>New York</td>
+                <td>27</td>
+                <td>2011-01-25</td>
+                <td>$112,000</td>
+                <td>
+
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="ui bottom tab segment active" data-tab="third">
+
+          <div class="ui list">
+            <div class="item">
+              <a class="ui blue image label">
+                Veronika
+                <div class="detail">Friend</div>
+              </a>
+            </div>
+            <div class="item">
+              <a class="ui blue image label">
+                Veronika
+                <div class="detail">Friend</div>
+              </a>
+            </div>
+            <div class="item">
+              <a class="ui blue image label">
+                Veronika
+                <div class="detail">Friend</div>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <div class="twelve wide column">
+      <div class="ui top attached button">KHÁM CHỨC NĂNG</div>
+      <div class="ui">
+        <div class="ui top attached tabular menu">
+          <a class="item" data-tab="first">Thông tin chung</a>
+          <a class="item" data-tab="second">Chức năng</a>
+          <a class="item active" data-tab="third">Chẩn đoán và điều trị</a>
+        </div>
+        <div class="ui bottom attached tab segment" data-tab="first">
+          <div class="ui labeled button" tabindex="0">
+            <div class="ui button">
+              <i class="heart icon"></i> Like
+            </div>
+            <a class="ui basic label">
+              2,048
+            </a>
+          </div>
+        </div>
+        <div class="ui bottom attached tab segment" data-tab="second" style="height:500px;overflow:auto">
+
+
+        </div>
+        <div class="ui bottom attached tab segment active" data-tab="third">
+          <table id="example" class="display" style="width:100%">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Position</th>
+                <th>Office</th>
+                <th>Age</th>
+                <th>Start date</th>
+                <th>Salary</th>
+                <th>Functions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>Shad Decker</td>
+                <td>Regional Director</td>
+                <td>Edinburgh</td>
+                <td>51</td>
+                <td>2008-11-13</td>
+                <td>$183,000</td>
+                <td>
+                  <button class="mini ui red button">
+                    Xoá
+                  </button>
+                  <button class="mini ui blue button">
+                    Sửa
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>Michael Bruce</td>
+                <td>Javascript Developer</td>
+                <td>Singapore</td>
+                <td>29</td>
+                <td>2011-06-27</td>
+                <td>$183,000</td>
+                <td>
+                  <button class="mini ui red button">
+                    Xoá
+                  </button>
+                  <button class="mini ui blue button">
+                    Sửa
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>Donna Snider</td>
+                <td>Customer Support</td>
+                <td>New York</td>
+                <td>27</td>
+                <td>2011-01-25</td>
+                <td>$112,000</td>
+                <td>
+                  <button class="mini ui red button">
+                    Xoá
+                  </button>
+                  <button class="mini ui blue button">
+                    Sửa
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Position</th>
+                <th>Office</th>
+                <th>Age</th>
+                <th>Start date</th>
+                <th>Salary</th>
+                <th>Chức năng</th>
+              </tr>
+            </tfoot>
+          </table>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="mini ui modal delete">
+    <div class="header">Xoá thuốc</div>
+    <div class="content">
+      Bạn có muốn xoá thuốc này khỏi đơn?
+    </div>
+    <div class="actions">
+      <div class="ui approve button">OK</div>
+      <div class="ui red cancel inverted button">Cancel</div>
+    </div>
+  </div>
+
+
+  <div class="small ui modal modify" id="myModal">
+    <div class="header">Kê đơn</div>
+    <div class="content">
+      <select id="select-tools" multiple placeholder="Pick a tool..."></select>
+    </div>
+    <div class="actions">
+      <div class="ui approve button">OK</div>
+      <div class="ui deny button">Cancel</div>
+    </div>
+  </div>
+
+  <script>
+    $('.visible.example .ui.sidebar')
+      .sidebar({
+        context: '.visible.example .bottom.segment'
+      })
+      .sidebar('hide')
+      ;
+
+    $('.menu .item')
+      .tab()
+      ;
+
+    $(document).ready(function () {
+
+      $('#myInput').dtDateTime(
+        {
+          locale: 'vi',
+        }
+      );
+
+      //test bảng danh sách bệnh nhân
+      var table2 = $('#example2').DataTable({
+        scrollY: 500,
+        scrollX: true,
+        rowReorder: true,
+        responsive: true,
+        columnDefs: [
+          { orderable: false, targets: 0 }
+        ],
+        language: {
+          lengthMenu: '',
+          url: 'https://raw.githubusercontent.com/drthinh/drthinh/master/vi.json'
+        }
+      }
+      );
+
+
+      var table = $('#example').DataTable({
+        dom: 'Bfrtip',
+        rowReorder: true,
+        columnDefs: [
+          { orderable: false, targets: 0 }
+        ],
+        buttons: [
+          'copy', 'excel', 'pdf', 'print'
+        ],
+        responsive: true,
+        language: {
+          lengthMenu: '',
+          url: 'https://raw.githubusercontent.com/drthinh/drthinh/master/vi.json'
+        },
+      }
+      );
+
+      $('#example tbody').on('click', 'button.red', function () {
+        var the_row = table.row($(this).parents('tr'));
+        var data = the_row.data();
+        $('.ui.modal.delete').modal({
+          onDeny: function () {
+            
+          },
+          onApprove: function () {
+            the_row.remove().draw(false);
+          }
+        }).modal('show');
+        console.log(data[0] + "'s salary is: " + data[5]);
+      });
+
+      $('#example tbody').on('click', 'button.blue', function () {
+        var data = table.row($(this).parents('tr')).data();
+        /* $('#myDialog').remove()
+        $('body').append('<div class="ui modal" id = "myDialog"><div class="header">'+data[6]+'</div></div>'); 
+        $("#myDialog").modal({
+            blurring: true,
+            observeChanges: true,
+            transition: 'scale',
+        }).modal('show') */
+
+        $('.ui.modal.modify')
+          .modal({
+            onShow: function (callback) {
+              //callback = $.isFunction(callback) ? callback : function(){};
+              var $content = $(this).find('.header');
+              $content.html(data[6]);
+            }
+          }).modal('show')
+
+      });
+
+      $('#example2 tbody').on('click', 'tr', function () {
+        if ($(this).hasClass('selected')) {
+          $(this).removeClass('selected');
+        } else {
+          table2.$('tr.selected').removeClass('selected');
+          $(this).addClass('selected');
+          console.log(table2.row(this).data());
+          var x = table2.row(this).data();
+          //x[0] = 'test';
+          //table.row(this).data(x).draw();
+        }
+      });
+
+      $('#button').click(function () {
+        table.row('.selected').remove().draw(false);
+      });
+
+      var $select = $('#select-tools').selectize({
+        maxItems: 1,
+        valueField: 'id',
+        labelField: 'title',
+        searchField: 'title',
+        options: [
+          { id: 1, title: 'Spectrometer', url: 'http://en.wikipedia.org/wiki/Spectrometers' },
+          { id: 2, title: 'Star Chart', url: 'http://en.wikipedia.org/wiki/Star_chart' },
+          { id: 3, title: 'Electrical Tape', url: 'http://en.wikipedia.org/wiki/Electrical_tape' }
+        ],
+        create: false,
+        openOnFocus: false
+      });
+
+
+    });
+
+
+  </script>
+</body>
+
+</html>
